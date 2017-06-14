@@ -11,8 +11,6 @@ def get_current_usd_rate_vs_world_currencies():
 
 	response =  requests.get(baseurl, params=my_attrs)
 
-	print(response.status_code)
-
 	js_data = response.json()
 
 	return js_data['quotes']
