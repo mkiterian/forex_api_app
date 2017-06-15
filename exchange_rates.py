@@ -16,7 +16,14 @@ def get_current_usd_vs_world_currencies():
 
     return js_data['quotes']
 
-rates = get_current_usd_vs_world_currencies()
+if __name__ == "__main__":
+	rates = get_current_usd_vs_world_currencies()
 
-for rate in rates:
-    print('USD to {} : {} '.format(rate[3:], rates[rate]))
+	cur = input("Please enter 3 letter currency symbol: ")
+
+	for rate in rates:
+		if cur.upper() == rate[3:]:
+			print('USD to {} : {} '.format(rate[3:], rates[rate]))
+			break
+
+
